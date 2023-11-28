@@ -45,16 +45,10 @@ nav li a {
         <div class="content-text">
             <h3>Giới thiệu chung</h3>
             <div class="content-p"> 
-<<<<<<< HEAD
-            Website trường mầm non nhằm mục tiêu cung cấp một nguồn thông tin toàn diện và dễ tiếp cận về chương trình học, hoạt động, và thông tin quan trọng khác đối với phụ huynh. Đồng thời, nó tạo cơ hội để tạo sự tương tác giữa trường và phụ huynh, xây dựng cộng đồng hỗ trợ sự phát triển toàn diện của trẻ. Website này giá trị bằng cách cung cấp thông tin chính xác và thuận tiện, tạo cầu nối hiệu quả giữa nhà trường và gia đình để hỗ trợ sự phát triển và học tập của trẻ mầm non. <br>
-            Trường mầm non Vườn An Nhiên không chỉ là nơi học tập, mà còn là một chuyến phiêu lưu kỳ diệu đối với trẻ nhỏ. Bắt đầu từ cánh cổng màu sắc, trẻ em bước vào thế giới của mình, nơi mà sự sáng tạo và tò mò được khuyến khích. Những ngôi lớp học như những "hộp thần kỳ" đầy ắp màu sắc, tạo không gian an toàn và ấm cúng để các em tự do bay bổng trong thế giới của tri thức. <br>
-            Quan trọng hơn, trường Vườn An Nhiên không chỉ chú trọng vào kiến thức học thuật, mà còn đặt sự phát triển toàn diện của trẻ lên hàng đầu. Tại đây, chăm sóc, tôn trọng và tạo điều kiện cho sự phát triển tốt nhất là nhiệm vụ hàng đầu. Mỗi học sinh không chỉ là một phần của lớp học, mà là một phần của gia đình mầm non, nơi mà mỗi bước tiến đều là một chặng đường kỳ diệu trong hành trình trưởng thành của họ. <br>
-=======
             Trường Mầm Non Vườn An Nhiên là một nơi mang đến cho các bé một môi trường giáo dục tốt nhất, nơi chúng được khám phá và phát triển toàn diện từ khả năng vận động, sáng tạo cho đến tư duy logic. Với phương châm "Nuôi dưỡng từ tâm, khám phá từ trí," trường không chỉ tập trung vào việc giảng dạy kiến thức mà còn đặt biệt sự quan tâm đến sự phát triển toàn diện của trẻ.<br>
             Trường mầm non Vườn An Nhiên không chỉ là nơi học tập, mà còn là một chuyến phiêu lưu kỳ diệu đối với trẻ nhỏ. Bắt đầu từ cánh cổng màu sắc, trẻ em bước vào thế giới của mình, nơi mà sự sáng tạo và tò mò được khuyến khích. Những ngôi lớp học như những "hộp thần kỳ" đầy ắp màu sắc, tạo không gian an toàn và ấm cúng để các em tự do bay bổng trong thế giới của tri thức. <br>
             Quan trọng hơn, trường Vườn An Nhiên không chỉ chú trọng vào kiến thức học thuật, mà còn đặt sự phát triển toàn diện của trẻ lên hàng đầu. Tại đây, chăm sóc, tôn trọng và tạo điều kiện cho sự phát triển tốt nhất là nhiệm vụ hàng đầu. Mỗi học sinh không chỉ là một phần của lớp học, mà là một phần của gia đình mầm non, nơi mà mỗi bước tiến đều là một chặng đường kỳ diệu trong hành trình trưởng thành của họ. <br>
             Mỗi ngày tại Trường Mầm Non Vườn An Nhiên là một hành trình khám phá mới, nơi mỗi đứa trẻ là nhân vật chính trong cuộc phiêu lưu của mình. Chúng tôi tin rằng việc đầu tiên để xây dựng một tương lai mạnh mẽ là tạo ra những kí ức đẹp và trải nghiệm ý nghĩa trong từng khoảnh khắc của tuổi thơ.<br>
->>>>>>> c64aa4d7f113f76c8d9aaf27eeba36ea7de20759
             </div>
             <h3>Thành tích</h3>
             <p class="content-p">
@@ -147,9 +141,3 @@ footer {
 .footer-right p {
   margin-bottom: 5px;
 }
-<<<<<<< HEAD
-</style>
-=======
-</style>
-
->>>>>>> c64aa4d7f113f76c8d9aaf27eeba36ea7de20759
