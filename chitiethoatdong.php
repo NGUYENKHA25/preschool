@@ -34,7 +34,7 @@
 <div class="right-column">
 <div class="activity">
     <img src="picture/<?=$product['hinhanh']?>" >
-    <p>Tên hoạt động: <?=$product['tenhoatdong']?></p>
+    <p><?=$product['tenhoatdong']?></p>
   </div>
 
 </div>
