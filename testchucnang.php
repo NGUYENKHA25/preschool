@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Giao Diện Trang Web</title>
+  <title>Chi Tiết Lớp Học </title>
 </head>
 <?php include "header.php" ?>
 <!-- Product -->
@@ -34,10 +34,16 @@
       <p>Tên giáo viên : <?=$product['tenGiaovien']?></p>
       <p>Bảo Mẫu : <?=$product['baoMau']?></p>
       <p>Giới thiệu : <?=$product['gioiThieu']?></p>
+      <button id="showFormBtn">Đăng Ký Ngay !</button>
+      <div id="formContainer"></div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
     </div>
   </div>
   
 </body>
+<?php include "footer.php" ?>
 </html>
 <style>
 .tieude h2{
@@ -86,6 +92,26 @@
   height: auto; /* Đảm bảo tỷ lệ khung hình của ảnh không bị méo */
   margin-right: 10px; /* Khoảng cách giữa hai ảnh */
 }
+#showFormBtn {
+  background-color: #008CBA; /* Màu nền của nút */
+  color: white; /* Màu chữ trên nút */
+  padding: 12px 20px; /* Kích thước lề nút */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Kích thước chữ trên nút */
+  margin: 10px 2px; /* Lề của nút */
+  cursor: pointer; /* Con trỏ chuột khi di chuyển qua nút */
+  border-radius: 5px; /* Bo tròn góc của nút */
+  border: none; /* Bỏ viền của nút */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nút */
+  transition: 0.3s; /* Hiệu ứng thay đổi khi di chuột qua nút */
+}
+
+#showFormBtn:hover {
+  background-color: #005f6b; /* Màu nền của nút khi di chuột qua */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng khi di chuột qua */
+}
 
 
 
@@ -107,6 +133,43 @@ thumbnails.forEach(thumbnail => {
     // Khi rê chuột ra, trả lại kích thước ban đầu cho ảnh nhỏ
     thumbnail.style.transform = 'scale(1)';
     thumbnail.style.zIndex = '0'; // Trả lại vị trí z-index ban đầu
+  });
+});
+$(document).ready(function(){
+  $("#showFormBtn").click(function(){
+    $("#formContainer").load("form.php", function(){
+      $("#closeFormBtn").click(function(){
+        $("#formContainer").empty();
+      });
+
+      // Đối với nút "Đăng ký"
+      $("#contactForm").on("submit", function(event){
+        event.preventDefault(); // Ngăn chặn form gửi thông tin đi ngay lập tức
+
+        // Lấy dữ liệu từ form
+        var formData = {
+          hoTenChaMe: $("#hoTenChaMe").val(),
+          hoTenBe: $("#hoTenBe").val(),
+          soDienThoai: $("#soDienThoai").val(),
+          email: $("#email").val(),
+          tinhTrangSucKhoe: $("#tinhTrangSucKhoe").val(),
+          ngayNhapHoc: $("#ngayNhapHoc").val(),
+          loaiLopHoc: $("#loaiLopHoc").val(),
+          ghiChu: $("#ghiChu").val()
+        };
+
+        // Gửi dữ liệu đến file xử lý PHP
+        $.ajax({
+          type: "POST",
+          url: "form.php",
+          data: formData,
+          success: function(response){
+            // Xử lý phản hồi từ server sau khi gửi dữ liệu thành công
+            $("#formContainer").html(response);
+          }
+        });
+      });
+    });
   });
 });
 
