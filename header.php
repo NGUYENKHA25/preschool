@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
 <header>
   <div class="logo">
     <img src="./picture/HappyHouseimg.png" alt="Logo">
@@ -9,7 +12,7 @@
       <li><a href="class.php" style="color: orange;">Lớp học</a></li>
       <li><a href="teacher.php" style="color :chartreuse">Đội ngũ giáo viên</a></li>
       <li><a href="activity.php" style="color:chocolate">Hoạt động </a></li>
-      <li><a href="lien-he.html" style="color: burlywood;">Liên hệ</a></li>
+      <li><a href="./trangquanly/loginadmin.php" style="color: burlywood;"><i class="fas fa-user-cog"></i></a></li>
   </ul>
   </nav>
 </header>
