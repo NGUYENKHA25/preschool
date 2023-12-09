@@ -12,7 +12,7 @@
 		<form method="GET" action="search.php">
 		     <input type="text" name="keyword" placeholder="Nhập từ khóa">
 		<button type="submit">Tìm kiếm</button>
-        <button><a href=".../adminmain.php" style="text-decoration:none; color:#fff"  >Quay lại </a></button>
+        <button><a href="adminmain.php" style="text-decoration:none; color:#fff"  >Quay lại </a></button>
 	   <form>
 		<table>
 			<thead>

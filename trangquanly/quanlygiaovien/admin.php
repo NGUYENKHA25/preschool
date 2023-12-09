@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quản lý tour du lịch</title>
+	<title>Quản lý Giáo Viên</title>
 
 	<meta charset="utf-8">
 </head>
 <body>
 	<div class="container">
-		<h1>Quản lý tour du lịch</h1>
-		<a href="./add_tour.php" class="btn add-btn">Thêm tour mới</a>
+		<h1>Quản lý Giáo Viên</h1>
+		<a href="./add.php" class="btn add-btn">Thêm Giáo Viên Mới</a>
 		<form method="GET" action="search.php">
 		     <input type="text" name="keyword" placeholder="Nhập từ khóa">
 		<button type="submit">Tìm kiếm</button>
@@ -18,34 +18,30 @@
 			<thead>
 				<tr>
 					<th>STT</th>
-					<th>Tên vùng</th>
 					<th>Hình ảnh</th>
-					<th>Địa điểm</th>
-					<th>Giá tour</th>
-					<th>Mã tour</th>
-                    <th>Thời gian</th>
-                    <th>Giới thiệu</th>
+					<th>Tên Giáo Viên</th>
+					<th>Năm Sinh</th>
+					<th>Vị Trí Công Việc</th>
+                    <th>Thành tích</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					include('../connect.php');
-					$sql="SELECT * FROM tourviet_data ORDER BY id_tour DESC";
+					$sql="SELECT * FROM giaovien ORDER BY magiaovien DESC";
 					$result=$conn->query($sql);
 					$count=1;
 					while($row=$result->fetch_assoc()){
 						echo "<tr>";
 						echo "<td>".$count."</td>";
-						echo "<td>".$row['tenvung']."</td>";
-						echo "<td><img src='uploads/".$row['hinhanh']."' style='width:100px'></td>";
-						echo "<td>".$row['tendiadiem']."</td>";
-						echo "<td>".$row['giatour']."</td>";
-						echo "<td>".$row['matour']."</td>";
-						echo "<td>".$row['thoigian']."</td>";
-						echo "<td>".$row['gioithieu']."</td>";
+						echo "<td><img src='picture/".$row['hinhanh']."' style='width:100px'></td>";
+						echo "<td>".$row['tengiaovien']."</td>";
+						echo "<td>".$row['namsinh']."</td>";
+						echo "<td>".$row['vitricongviec']."</td>";
+						echo "<td>".$row['thanhtich']."</td>";
 						echo "<td>";
-						echo "<a href='edit_tour.php?id=".$row['id_tour']."' class='btn edit-btn'>Sửa</a>";
-						echo "<a href='delete_tour.php?id=".$row['id_tour']."' onclick='return confirm(\"Bạn có chắc muốn xóa tour này?\")' class='btn del-btn'>Xóa</a>";
+						echo "<a href='edit.php?id=".$row['magiaovien']."' class='btn edit-btn'>Sửa</a>";
+						echo "<a href='delete.php?id=".$row['magiaovien']."' onclick='return confirm(\"Bạn có chắc muốn xóa giáo viên này?\")' class='btn del-btn'>Xóa</a>";
 						echo "</td>";
 						echo "</tr>";
 						$count++;

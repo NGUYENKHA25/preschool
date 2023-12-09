@@ -1,16 +1,13 @@
 <?php
 	include('../connect.php');
-	$tenvung = $_POST['tenvung'];
 	$hinhanh = $_FILES['hinhanh']['name'];
-
-	$tendiadiem = $_POST['tendiadiem'];
-	$giatour = $_POST['giatour'];
-	$matour = $_POST['matour'];
-	$thoigian = $_POST['thoigian'];
-	$gioithieu = $_POST['gioithieu'];
+    $tengiaovien = $_POST['tengiaovien'];
+	$namsinh =$_POST['namsinh'];
+	$vitricongviec = $_POST['vitricongviec'];
+	$thanhtich = $_POST['thanhtich'];
 
 	// Upload hình ảnh lớn 
-	$target_dir = "uploads/";
+	$target_dir = "picture/";
 	$target_file = $target_dir . basename($_FILES["hinhanh"]["name"]);
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	$uploadOk = 1;
@@ -41,13 +38,13 @@
 	if ($conn->connect_error) {
 		die("Kết nối tới CSDL thất bại: " . $conn->connect_error);
 	} 
-	$sql = "INSERT INTO tourviet_data (tenvung, hinhanh, tendiadiem, giatour, matour, thoigian, gioithieu)
-	VALUES ('$tenvung', '$hinhanh', '$tendiadiem', '$giatour', '$matour', '$thoigian', '$gioithieu')";
+	$sql = "INSERT INTO giaovien (hinhanh, tengiaovien, namsinh, vitricongviec, thanhtich)
+	VALUES ('$hinhanh', '$tengiaovien', '$namsinh', '$vitricongviec', '$thanhtich')";
 	
 	if ($conn->query($sql) === TRUE) {
 	
 		header('location:admin.php');
-		echo "Thêm tour mới thành công.";
+		echo "Thêm giáo viên mới thành công.";
 		exit();
 	} else {
 		echo "Lỗi: " . $conn->error;

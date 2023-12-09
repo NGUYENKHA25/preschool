@@ -5,10 +5,10 @@ if(isset($_GET['keyword'])) {
 	$keyword = $_GET['keyword'];
 	
 	// Định nghĩa câu truy vấn tìm kiếm
-	$query = "SELECT * FROM booking WHERE 
-					fullname LIKE '%$keyword%' OR 
-					phone LIKE '%$keyword%' OR 
-					email LIKE '%$keyword%'";
+	$query = "SELECT * FROM danhsachtre WHERE 
+					hoVaTen LIKE '%$keyword%' OR 
+					phuHuynh LIKE '%$keyword%' OR 
+					soDienThoai LIKE '%$keyword%'";
 					
 	// Thực thi câu truy vấn
 	$result = mysqli_query($conn, $query);
@@ -17,15 +17,15 @@ if(isset($_GET['keyword'])) {
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='tour'>";
-			echo "<h2> Họ và Tên :" . $row['fullname'] . "</h2>";
+			echo "<h2> Họ và Tên :" . $row['hoVaTen'] . "</h2>";
+			echo "<p>Phụ Huynh:" .$row['phuHuynh']."</p>";
+			echo "<p>Lớp:" .$row['lop']."</p>";
 			echo "<p> Số Điện Thoại:" .$row['phone'] . "</p>";
-			echo "<p> Email:" . $row['email'] . "</p>";
-			echo "<p> Số Lượng:" . $row['num_people'] . "</p>";
-			echo "<p> Tổng Tiền :" . $row['total_price'] . "</p>";
+			echo "<p> Tuổi:" . $row['tuoi'] . "</p>";
 			echo "</div>";
 		}
 	} else {
-		echo "Không tìm thấy Booking nào";
+		echo "Không tìm thấy thông tin trẻ nào";
 	}
 
 }

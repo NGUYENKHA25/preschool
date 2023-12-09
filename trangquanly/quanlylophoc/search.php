@@ -5,10 +5,10 @@ if(isset($_GET['keyword'])) {
 	$keyword = $_GET['keyword'];
 	
 	// Định nghĩa câu truy vấn tìm kiếm
-	$query = "SELECT * FROM lehoi WHERE 
-				    tenvung LIKE '%$keyword%' OR 
-					tenlehoi LIKE '%$keyword%' OR 
-					noidung LIKE '%$keyword%'";
+	$query = "SELECT * FROM lophoc WHERE 
+				    tenLophoc LIKE '%$keyword%' OR 
+					tenGiaovien LIKE '%$keyword%' OR 
+					doTuoi LIKE '%$keyword%'";
 					
 	// Thực thi câu truy vấn
 	$result = mysqli_query($conn, $query);
@@ -17,14 +17,17 @@ if(isset($_GET['keyword'])) {
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='tour'>";
-			echo "<h2>Tên Vùng:" . $row['tenvung'] . "</h2>";
-			echo "Hình ảnh :<img src='imgs/".$row['hinhanh'] . "'>";
-			echo "Tên Lễ Hội :<p>" .$row['tenlehoi'] . "</p>";
-			echo "<p> Nội Dung:" . $row['noidung'] . "</p>";
+			echo "<td><img src='picture/".$row['hinhAnh']."' style='width:100px'></td>";
+			echo "<td>".$row['tenLophoc']."</td>";
+			echo "<td>".$row['doTuoi']."</td>";
+			echo "<td>".$row['hocPhi']."</td>";
+			echo "<td>".$row['tenGiaovien']."</td>";
+			echo "<td>".$row['baoMau']."</td>";
+			echo "<td>".$row['gioiThieu']."</td>";
 			echo "</div>";
 		}
 	} else {
-		echo "Không tìm thấy Lễ Hội  nào";
+		echo "Không tìm thấy lớp học nào";
 	}
 
 }

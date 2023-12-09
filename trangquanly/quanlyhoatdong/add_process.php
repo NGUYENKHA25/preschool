@@ -8,13 +8,13 @@
 	$gioithieu = $_POST['gioithieu'];
 
 	// Upload hình ảnh lớn 
-	$target_dir = "picture/";
+	$target_dir = "imgs/";
 	$target_file = $target_dir . basename($_FILES["hinhanh"]["name"]);
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	$uploadOk = 1;
 
 	// Kiểm tra kích thước tập tin hình ảnh
-	if ($_FILES["hinhanh"]["size"] > 500000) {
+	if ($_FILES["hinhanh"]["size"] > 5000000) {
 	  echo "Xin lỗi, tập tin hình ảnh quá lớn.";
 	  $uploadOk = 0;
 	}

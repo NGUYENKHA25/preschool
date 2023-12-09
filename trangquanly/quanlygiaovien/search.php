@@ -5,13 +5,11 @@ if(isset($_GET['keyword'])) {
 	$keyword = $_GET['keyword'];
 	
 	// Định nghĩa câu truy vấn tìm kiếm
-	$query = "SELECT * FROM tourviet_data WHERE 
-					tenvung LIKE '%$keyword%' OR 
-					tendiadiem LIKE '%$keyword%' OR 
-					giatour LIKE '%$keyword%' OR 
-					matour LIKE '%$keyword%' OR 
-					thoigian LIKE '%$keyword%' OR 
-					gioithieu LIKE '%$keyword%'";
+	$query = "SELECT * FROM giaovien WHERE  
+					tengiaovien LIKE '%$keyword%' OR 
+					namsinh LIKE '%$keyword%' OR 
+					vitricongviec LIKE '%$keyword%' OR 
+					thanhtich LIKE '%$keyword%'";
 					
 	// Thực thi câu truy vấn
 	$result = mysqli_query($conn, $query);
@@ -20,17 +18,15 @@ if(isset($_GET['keyword'])) {
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='tour'>";
-			echo "<h2>Tên Vùng " . $row['tenvung'] . "</h2>";
-			echo "Hình Ảnh :<img src='uploads/".$row['hinhanh'] . "'>";
-			echo "<p> Tên Địa Điểm" .$row['tendiadiem'] . "</p>";
-			echo "<p>Giá tour: " . $row['giatour'] . "đ</p>";
-			echo "<p>Mã tour: " . $row['matour'] . "</p>";
-			echo "<p>Thời gian: " . $row['thoigian'] . "</p>";
-			echo "<p>Giới Thiệu :" . $row['gioithieu'] . "</p>";
+			echo "Hình Ảnh :<img src='picture/".$row['hinhanh'] . "'>";
+			echo "<p> Tên Giaó Viên" .$row['tengiaovien'] . "</p>";
+			echo "<p>Năm sinh: " . $row['namsinh'] . "đ</p>";
+			echo "<p>Vị trí công việc: " . $row['vitricongviec'] . "</p>";
+			echo "<p>Thành tích: " . $row['thanhtich'] . "</p>";
 			echo "</div>";
 		}
 	} else {
-		echo "Không tìm thấy tour nào";
+		echo "Không tìm thấy giáo viên nào";
 	}
 }
 

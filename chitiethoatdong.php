@@ -41,6 +41,7 @@
 
 </div>
 </body>
+<?php include "footer.php"; ?>
 <style>
 .left-column{
     width: 60%;

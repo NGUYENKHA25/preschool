@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quản lý Đặt Vé </title>
+	<title>Quản lý Danh Sách Trẻ Đăng Ký </title>
 
 	<meta charset="utf-8">
 </head>
 <body>
 	<div class="container">
-		<h1>Quản lý Người Dùng </h1>
+		<h1>Quản lý Danh Sách Trẻ Đăng Ký </h1>
 		<form method="GET" action="search.php">
 		     <input type="text" name="keyword" placeholder="Nhập từ khóa">
 		<button type="submit">Tìm kiếm</button>
@@ -17,31 +17,37 @@
 			<thead>
 				<tr>
 					<th>STT</th>
-					<th>Họ Và Tên </th>
-                    <th>Mật Khẩu </th>
+					<th>Họ Và Tên Cha Mẹ </th>
+                    <th> Họ Tên Bé </th>
+                    <th>Số điện thoại</th>
 					<th>Email </th>
-                    <th>FullName </th>
-                    <th>Ngày Sinh  </th>
+                    <th>Tình Trạng Sức Khỏe</th>
+                    <th>Ngày Nhập Học</th>
+                    <th>Loại Lớp Học</th>
+                    <th>Ghi Chú</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 					include('../connect.php');
-					$sql="SELECT * FROM user_data  ORDER BY id DESC";
+					$sql="SELECT * FROM thongtintre  ORDER BY id_tre DESC";
 					$result=$conn->query($sql);
 					$count=1;
 					while($row=$result->fetch_assoc()){
 						echo "<tr>";
 						echo "<td>".$count."</td>";
-						echo "<td>".$row['username']."</td>";
-                        echo "<td>".$row['matkhau']."</td>";
-						echo "<td>".$row['email']."</td>";
-                        echo "<td>".$row['fullname']."</td>";
-                        echo "<td>".$row['birthday']."</td>";
+						echo "<td>".$row['hoTenChaMe']."</td>";
+                        echo "<td>".$row['hoTenBe']."</td>";
+						echo "<td>".$row['soDienThoai']."</td>";
+                        echo "<td>".$row['email']."</td>";
+                        echo "<td>".$row['tinhTrangSucKhoe']."</td>";
+                        echo "<td>".$row['ngayNhapHoc']."</td>";
+                        echo "<td>".$row['loaiLopHoc']."</td>";
+                        echo "<td>".$row['ghiChu']."</td>";
                       
 						echo "<td>";
-						echo "<a href='edit_tour.php?id=".$row['id']."' class='btn edit-btn'>Sửa</a>";
-						echo "<a href='delete_tour.php?id=".$row['id']."' onclick='return confirm(\"Bạn có chắc muốn xóa tour này?\")' class='btn del-btn'>Xóa</a>";
+						echo "<a href='edit_tour.php?id=".$row['id_tre']."' class='btn edit-btn'>Sửa</a>";
+						echo "<a href='delete_tour.php?id=".$row['id_tre']."' onclick='return confirm(\"Bạn có chắc muốn xóa đăng ký này?\")' class='btn del-btn'>Xóa</a>";
 						echo "</td>";
 						echo "</tr>";
 						$count++;

@@ -5,10 +5,10 @@ if(isset($_GET['keyword'])) {
 	$keyword = $_GET['keyword'];
 	
 	// Định nghĩa câu truy vấn tìm kiếm
-	$query = "SELECT * FROM user_data WHERE 
-					fullname LIKE '%$keyword%' OR 
-					username LIKE '%$keyword%' OR 
-					email LIKE '%$keyword%'";
+	$query = "SELECT * FROM thongtintre WHERE 
+					hoTenBe LIKE '%$keyword%' OR 
+					hoTenChaMe LIKE '%$keyword%' OR 
+					soDienThoai LIKE '%$keyword%'";
 					
 	// Thực thi câu truy vấn
 	$result = mysqli_query($conn, $query);
@@ -17,15 +17,18 @@ if(isset($_GET['keyword'])) {
 	if(mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
             echo "<div class='tour'>";
-			echo "<h2> Tên Người Dùng :" . $row['username'] . "</h2>";
-			echo "<h2> Họ và Tên :" . $row['fullname'] . "</h2>";
-			echo "<p> Mật Khẩu :" .$row['matkhau'] . "</p>";
-			echo "<p> Email:" . $row['email'] . "</p>";
-			echo "<p> Ngày Sinh :" . $row['birthday'] . "</p>";
+			echo "<td>".$row['hoTenChaMe']."</td>";
+			echo "<td>".$row['hoTenBe']."</td>";
+			echo "<td>".$row['soDienThoai']."</td>";
+			echo "<td>".$row['email']."</td>";
+			echo "<td>".$row['tinhTrangSucKhoe']."</td>";
+			echo "<td>".$row['ngayNhapHoc']."</td>";
+			echo "<td>".$row['loaiLopHoc']."</td>";
+			echo "<td>".$row['ghiChu']."</td>";
 			echo "</div>";
 		}
 	} else {
-		echo "Không tìm thấy Người Dùng  nào";
+		echo "Không tìm thấy thông tin nào";
 	}
 
 }
