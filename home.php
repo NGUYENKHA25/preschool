@@ -16,7 +16,7 @@
              nảy mầm sáng tạo trong từng trái tim nhỏ bé , nuôi dưỡng khát vọng tự do <br>
             khám phá và học hỏi cùng những nụ cười rạng người trên gương mặt trẻ thơ."
         </p>
-        <button class="btn">Đăng ký ngay</button>
+        <a href="form.php"><button class="btn">Đăng ký ngay</button></a>
         <div class="image">
         <img id="img" onclick="changeImage()" src="./picture/Computer Kids Google Review - Made with PosterMyWall.jpg" alt="">
     </div>

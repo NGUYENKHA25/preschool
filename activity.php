@@ -33,21 +33,22 @@ include "header.php";
 
 <div class="list-container">
 <?php 
-       while($activity = mysqli_fetch_array($result)) {
-        $image = $activity['hinhanh'];
-        $name = $activity['tenhoatdong'];
-        $location = $activity['diadiem'];
-        $id = $activity['mahoatdong'];
-        
-        echo '<div class="image-list" data-id="' . $activity['mahoatdong'] . '">';
-        echo '<img class="activity-image" src="picture/' . $image . '" alt="Hình ảnh hoạt động">'; 
-        echo '<div class="activity-info">';
-        echo '<h3 class="activity-name">Tên hoạt động: ' . $name . '</h3>'; 
-        echo '<p class="activity-description">Địa Điểm: ' . $location . '</p>';
-        echo '</div>';
-        echo '</div>';
-    }
+   while($activity = mysqli_fetch_array($result)) {
+    $image = $activity['hinhanh'];
+    $name = $activity['tenhoatdong'];
+    $location = $activity['diadiem'];
+    $id = $activity['mahoatdong'];
+    
+    echo '<div class="image-list" data-id="' . $activity['mahoatdong'] . '">';
+    echo '<a href="chitiethoatdong.php?id=' . $id . '"><img class="activity-image" src="picture/' . $image . '" alt="Hình ảnh hoạt động"></a>'; 
+    echo '<div class="activity-info">';
+    echo '<h3 class="activity-name">Tên hoạt động: ' . $name . '</h3>'; 
+    echo '<p class="activity-description">Địa Điểm: ' . $location . '</p>';
+    echo '</div>';
+    echo '</div>';
+}
 ?>
+
 </div>
 <?php include "footer.php"; ?>
 </body>
