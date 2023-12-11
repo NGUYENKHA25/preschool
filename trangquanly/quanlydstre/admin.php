@@ -8,7 +8,7 @@
 <body>
 	<div class="container">
 		<h1>Quản lý Danh Sách Trẻ</h1>
-        <a href="./add.php" class="btn add-btn">Thêm TT Tre Mới</a>
+        <a href="./add.php" class="btn add-btn">Thêm TT Trẻ Mới</a>
 		<form method="GET" action="search.php">
 		     <input type="text" name="keyword" placeholder="Nhập từ khóa">
 		<button type="submit">Tìm kiếm</button>
