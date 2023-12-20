@@ -22,10 +22,7 @@
   <div class="container">
     <div class="left-column">
       <img src="picture/<?=$product['hinhAnh']?>" >
-      <div class="thumbnail-images">
-        <img class="thumbnail" src="uploads/ <?=$product['image_path']?>" alt="Ảnh Con " >
-        <!-- thêm các ảnh con khác cần hiển thị -->
-      </div>
+
     </div>
     <div class="right-column">
       <h2>Tên Lớp : <?=$product['tenLophoc']?></h2>

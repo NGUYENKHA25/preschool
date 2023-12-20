@@ -1,18 +1,4 @@
-<header>
-  <div class="logo">
-    <img src="./picture/HappyHouseimg.png" alt="Logo">
-  </div>
-  <nav>
-  <ul>
-      <li><a href="home.php" style="color:brown">Trang chủ</a></li>
-      <li><a href="introduce.php" style="color:aquamarine">Giới thiệu</a></li>
-      <li><a href="class.php" style="color: orange;">Lớp học</a></li>
-      <li><a href="teacher.php" style="color :chartreuse">Đội ngũ giáo viên</a></li>
-      <li><a href="activity.php" style="color:chocolate">Hoạt động </a></li>
-      <li><a href="lien-he.html" style="color: burlywood;">Liên hệ</a></li>
-  </ul>
-  </nav>
-</header>
+<?php include "header.php" ?>
 <style>
   header {
   
